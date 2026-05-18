@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <!-- HTML Meta Tags -->
+  <!-- HTML Meta Tags -->
   <title>Quran Art</title>
   <meta name="description" content="Beautiful AI-generated Quranic verse artwork and visualizations. Each sacred verse echoing the splendor of Topkapi manuscripts with translation from Abdullah Yusuf Ali.">
 
@@ -12,8 +12,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Quran Art">
   <meta property="og:description" content="Beautiful AI-generated Quranic verse artwork and visualizations. Each sacred verse echoing the splendor of Topkapi manuscripts with translation from Abdullah Yusuf Ali.">
-  <meta property="og:image" content="https://smbclouddrive.blob.core.windows.net/sitecontent/QuranLogo.jpg">
-  <meta property="og:image:secure_url" content="https://smbclouddrive.blob.core.windows.net/sitecontent/QuranLogo.jpg">
+  <meta property="og:image" content="https://smbclouddrive.blob.core.windows.net/quran-art/QuranLogo.jpg">
+  <meta property="og:image:secure_url" content="https://smbclouddrive.blob.core.windows.net/quran-art/QuranLogo.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Quran Art - AI-generated Quranic verse artwork">
@@ -27,18 +27,18 @@
   <meta property="twitter:url" content="https://www.quran-art.cloud/">
   <meta name="twitter:title" content="Quran Art">
   <meta name="twitter:description" content="Beautiful AI-generated Quranic verse artwork and visualizations. Each sacred verse echoing the splendor of Topkapi manuscripts with translation from Abdullah Yusuf Ali.">
-  <meta name="twitter:image" content="https://smbclouddrive.blob.core.windows.net/sitecontent/QuranLogo.jpg">
+  <meta name="twitter:image" content="https://smbclouddrive.blob.core.windows.net/quran-art/QuranLogo.jpg">
   <meta name="twitter:image:alt" content="Quran Art - AI-generated Quranic verse artwork">
 
   <!-- Explicit image meta for other platforms -->
-  <link rel="image_src" href="https://smbclouddrive.blob.core.windows.net/sitecontent/QuranLogo.jpg">
+  <link rel="image_src" href="https://smbclouddrive.blob.core.windows.net/quran-art/QuranLogo.jpg">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://www.quran-art.cloud/">
   
   <!-- Favicon / Apple Touch Icon -->
-  <link rel="icon" type="image/jpeg" href="https://smbclouddrive.blob.core.windows.net/sitecontent/QuranLogo.jpg">
-  <link rel="apple-touch-icon" href="https://smbclouddrive.blob.core.windows.net/sitecontent/QuranLogo.jpg">
+  <link rel="icon" type="image/jpeg" href="https://smbclouddrive.blob.core.windows.net/quran-art/QuranLogo.jpg">
+  <link rel="apple-touch-icon" href="https://smbclouddrive.blob.core.windows.net/quran-art/QuranLogo.jpg">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -48,7 +48,7 @@
     "name": "Quran Art",
     "url": "https://www.quran-art.cloud/",
     "description": "Beautiful AI-generated Quranic verse artwork and visualizations. Each sacred verse echoing the splendor of Topkapi manuscripts with translation from Abdullah Yusuf Ali.",
-    "image": "https://smbclouddrive.blob.core.windows.net/sitecontent/QuranLogo.jpg",
+    "image": "https://smbclouddrive.blob.core.windows.net/quran-art/QuranLogo.jpg",
     "sameAs": [
       "https://twitter.com/quranart",
       "https://www.instagram.com/quranart",
@@ -197,10 +197,11 @@
       align-items: center;
       transition: transform 0.5s;
     }
-    /* Majestic Gold Frame for carousel images - larger and luxurious */
+    
+    /* Majestic Gold Frame - ZERO GAP VERSION */
     .carousel-gold-frame {
       background: linear-gradient(145deg, #c9a03d, #fde876, #b47c2e, #efcd82);
-      padding: 18px 18px 22px 18px;
+      padding: 18px;
       border-radius: 32px 12px 32px 12px;
       box-shadow: 0 25px 40px -12px rgba(0,0,0,0.8), inset 0 1px 4px rgba(255,255,200,0.6);
       width: 100%;
@@ -209,24 +210,33 @@
       transition: all 0.3s ease;
       cursor: pointer;
     }
+    
+    /* Inner frame - ZERO PADDING, IMAGE FILLS COMPLETELY */
     .carousel-frame-inner {
       background: #1f1b12;
-      padding: 8px;
-      border-radius: 24px 6px 24px 6px;
+      padding: 0;
+      border-radius: 20px 2px 20px 2px;
       overflow: hidden;
+      width: 100%;
+      /* Let the image determine the height naturally */
+      display: block;
     }
+    
+    /* IMAGE FILLS FRAME COMPLETELY - NO GAPS */
     .carousel-image {
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 20px 2px 20px 2px;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
+      border-radius: 0;
       transition: transform 0.4s ease;
+      /* Remove any max-height constraints */
+      max-height: none;
     }
+    
     .swiper-slide:hover .carousel-image {
       transform: scale(1.02);
     }
+    
     .slide-caption {
       text-align: center;
       margin-top: 1.2rem;
@@ -241,6 +251,9 @@
       color: #e2bc6e;
       margin-top: 5px;
       font-style: italic;
+    }
+    .slide-desc p {
+      margin: 2px 0;
     }
 
     /* Swiper navigation custom gold buttons */
@@ -301,6 +314,7 @@
       flex-wrap: wrap;
     }
 
+    /* Responsive adjustments */
     @media (max-width: 780px) {
       .container {
         padding: 1rem;
@@ -335,7 +349,6 @@
 </head>
 <body>
 
-
 <div class="royal-bg-overlay"></div>
 <div class="container">
   <div class="royal-header">
@@ -355,7 +368,7 @@
     </div>
   </div>
 
-  <!-- Royal Calligraphy Carousel - Three Sacred Works -->
+  <!-- Royal Calligraphy Carousel -->
   <div class="carousel-section">
     <div class="carousel-title">◈  GOLDEN REVELATIONS  ◈</div>
     <div class="swiper mySwiper">
@@ -365,10 +378,10 @@
         <div class="swiper-slide">
           <div class="carousel-gold-frame">
             <div class="carousel-frame-inner">
-              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/sitecontent/Al-Aadiyat.png" alt="Surah Al-Aadiyat">
+              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/quran-art/Al-Aadiyat.png" alt="Surah Al-Aadiyat">
             </div>
-            <div class="slide-caption">﴾  Sūra 100: ‘Ādiyat, or Those that run  ﴿</div>
-            <div class="slide-desc" style="color: black;"><p>1. By the (Steeds) That run, with panting (breath),</p><p>2. And strike sparks of fire,</p><p>3. And push home the charge In the morning,</p><p>4. And raise the dust In clouds the while,</p></div>
+            <div class="slide-caption">﴾  Sūra 100: 'Ādiyat, or Those that run  ﴿</div>
+            <div class="slide-desc" style="color: #020100;"><p>1. By the (Steeds) That run, with panting (breath),</p><p>2. And strike sparks of fire,</p><p>3. And push home the charge In the morning,</p><p>4. And raise the dust In clouds the while,</p></div>
           </div>
         </div>
 
@@ -376,10 +389,10 @@
         <div class="swiper-slide">
           <div class="carousel-gold-frame">
             <div class="carousel-frame-inner">
-              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/sitecontent/Al-Inshiqaq.jpeg" alt="Surah Al-Inshiqaq">
+              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/quran-art/Al-Inshiqaq.jpeg" alt="Surah Al-Inshiqaq">
             </div>
             <div class="slide-caption">﴾  Sūra 84: Inshiqāq, or The Rending Asunder ﴿</div>
-            <div class="slide-desc" style="color: black;"><p>16. So I do call To witness the ruddy glow Of Sunset ;</p><p>17. The Night and its Homing ;</p><p>18. And the Moon In her Fullness :</p><p>19. Ye shall surely travel From stage to stage.</p></div>
+            <div class="slide-desc" style="color: #020100;"><p>16. So I do call To witness the ruddy glow Of Sunset ;</p><p>17. The Night and its Homing ;</p><p>18. And the Moon In her Fullness :</p><p>19. Ye shall surely travel From stage to stage.</p></div>
           </div>
         </div>
 
@@ -387,10 +400,10 @@
         <div class="swiper-slide">
           <div class="carousel-gold-frame">
             <div class="carousel-frame-inner">
-              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/sitecontent/Al-Tariq.png" alt="Surah Al-Tariq">
+              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/quran-art/Al-Tariq.png" alt="Surah Al-Tariq">
             </div>
             <div class="slide-caption">﴾  Sūra 86: Tāriq, or The Night-Visitant  ﴿</div>
-            <div class="slide-desc" style="color: black;"><p>1. By the Sky And the Night-Visitant (Therein);</p><p>2. And what will explain to thee What the Night-Visitant is?—</p><p>3. (It is) the Star Of piercing brightness;–</p></div>
+            <div class="slide-desc" style="color: #020100;"><p>1. By the Sky And the Night-Visitant (Therein);</p><p>2. And what will explain to thee What the Night-Visitant is?—</p><p>3. (It is) the Star Of piercing brightness;–</p></div>
           </div>
         </div>
 
@@ -398,10 +411,10 @@
         <div class="swiper-slide">
           <div class="carousel-gold-frame">
             <div class="carousel-frame-inner">
-              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/sitecontent/Al-Nur.jpg" alt="Surah Al-Nur">
+              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/quran-art/Al-Nur.jpg" alt="Surah Al-Nur">
             </div>
             <div class="slide-caption">﴾  Sūra 24: Nūr, or Light  ﴿</div>
-            <div class="slide-desc" style="color: black;"><p>35. God is the Light Of the heavens and the earth. The parable of His Light Is as if there were a Niche And within it a Lamp : The Lamp enclosed in Glass : The glass as it were A brilliant star : Lit from a blessed Tree, An Olive, neither of the East Nor of the West, Whose Oil is well-nigh Luminous, Though fire scarce touched it : Light upon Light ! God doth guide Whom He will To His Light : God doth set forth Parables For men : and God Doth know all things.</p><p>36. (Lit is such a Light) In houses, which God Hath permitted to be raised To honour ; for the celebration, In them, of His name : In them is He glorified In the mornings and In the evenings, (again and again),</p></div>
+            <div class="slide-desc" style="color: #020100;"><p>35. God is the Light Of the heavens and the earth. The parable of His Light Is as if there were a Niche And within it a Lamp : The Lamp enclosed in Glass : The glass as it were A brilliant star : Lit from a blessed Tree, An Olive, neither of the East Nor of the West, Whose Oil is well-nigh Luminous, Though fire scarce touched it : Light upon Light ! God doth guide Whom He will To His Light : God doth set forth Parables For men : and God Doth know all things.</p><p>36. (Lit is such a Light) In houses, which God Hath permitted to be raised To honour ; for the celebration, In them, of His name : In them is He glorified In the mornings and In the evenings, (again and again),</p></div>
           </div>
         </div>
 
@@ -409,43 +422,58 @@
         <div class="swiper-slide">
           <div class="carousel-gold-frame">
             <div class="carousel-frame-inner">
-              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/sitecontent/Al-Qiyamat.jpg" alt="Surah Al-Qiyamat">
+              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/quran-art/Al-Qiyamat.jpg" alt="Surah Al-Qiyamat">
             </div>
             <div class="slide-caption">﴾  Sūra 75: Qiyāmat, or the Resurrection  ﴿</div>
-            <div class="slide-desc" style="color: black;"><p>8. And the moon is Buried in darkness.</p>
-                                                            <p>9. And the sun and moon Are joined together,—</p>
-                                                            <p>10. That Day will Man say : “ Where is the refuge ? ”</p>
-                                                            <p>11. By no means ! No place of safety !</p></div>
+            <div class="slide-desc" style="color: #020100;"><p>8. And the moon is Buried in darkness.</p><p>9. And the sun and moon Are joined together,—</p><p>10. That Day will Man say : " Where is the refuge ? "</p><p>11. By no means ! No place of safety !</p></div>
           </div>
         </div>
 
-        
         <!-- Slide 6: Al-Najm -->
         <div class="swiper-slide">
           <div class="carousel-gold-frame">
             <div class="carousel-frame-inner">
-              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/sitecontent/Al-Najm.jpg" alt="Surah Al-Najm">
+              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/quran-art/Al-Najm.jpg" alt="Surah Al-Najm">
             </div>
             <div class="slide-caption">﴾  Sūra 53: Najm, or the Star  ﴿</div>
-            <div class="slide-desc" style="color: black;"><p>1. By the Star When it goes down,—</p>
-                                                            <p>2. Your Companion is neither Astray nor being misled.</p>
-                                                            <p>3. Nor does he say (aught) Of (his own) Desire.</p>
-                                                            <p>4. It is no less than Inspiration sent down to him :</p></div>
+            <div class="slide-desc" style="color: #020100;"><p>1. By the Star When it goes down,—</p><p>2. Your Companion is neither Astray nor being misled.</p><p>3. Nor does he say (aught) Of (his own) Desire.</p><p>4. It is no less than Inspiration sent down to him :</p></div>
           </div>
         </div>
 
-        <!-- Slide 7: Ar-Rahman  -->
+        <!-- Slide 7: Al-Takwir -->
         <div class="swiper-slide">
           <div class="carousel-gold-frame">
             <div class="carousel-frame-inner">
-              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/sitecontent/Al-Rahman.png" alt="Surah Ar-Rahman">
+              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/quran-art/Al-Takwir.png" alt="Surah Al-Takwir">
+            </div>
+            <div class="slide-caption">﴾  Sūra 81: Takwīr, or the Folding Up  ﴿</div>
+            <div class="slide-desc" style="color: #020100;"><p>1. When the sun (With its spacious light) Is folded up ;</p>
+<p>2. When the stars Fall, losing their lustre ;</p>
+<p>3. When the mountains vanish (Like a mirage) ;</p>
+<p>4. When the she-camels, Ten months with young, Are left untended ;</p>
+<p>5. When the wild beasts Are herded together (In human habitations) ;</p>
+<p>6. When the oceans Boil over with a swell ;</p>
+<p>7. When the souls Are sorted out, (Being joined, like with like) ;</p>
+<p>8. When the female (infant), is questioned—</p>
+<p>9. For what crime She was killed ;</p>
+<p>10. When the Scrolls Are laid open ;</p>
+<p>11. When the World on High Is unveiled ;</p>
+<p>12. When the Blazing Fire Is kindled to fierce heat ;</p>
+<p>13. And when the Garden Is brought near ;—</p></div>
+          </div>
+        </div>
+
+        <!-- Slide 8: Ar-Rahman -->
+        <div class="swiper-slide">
+          <div class="carousel-gold-frame">
+            <div class="carousel-frame-inner">
+              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/quran-art/Al-Rahman.png" alt="Surah Ar-Rahman">
             </div>
             <div class="slide-caption">﴾ Sūra 55: Rahmān, or Most Gracious  ﴿</div>
-            <div class="slide-desc" style="color: black;"><p>37. When the sky is rent Asunder, and it becomes Red Rose like oil canvas :</p><p>38. Then which of the favours Of your Lord will ye deny ?</p></div>
+            <div class="slide-desc" style="color: #020100;"><p>37. When the sky is rent Asunder, and it becomes Red Rose like oil canvas :</p><p>38. Then which of the favours Of your Lord will ye deny ?</p></div>
           </div>
         </div>
       </div>
-
 
       <!-- navigation & pagination -->
       <div class="swiper-button-next"></div>
@@ -463,13 +491,12 @@
       <div class="line" style="width: 80px;"></div>
       <div class="diamond"></div>
     </div>
-    <p>Each sacred verse echoing the splendor of Topkapi manuscripts with translation from Abdullah Yusuf Ali. <br>
-    </p>
+    <p>Each sacred verse echoing the splendor of Topkapi manuscripts with translation from Abdullah Yusuf Ali.</p>
   </div>
 
   <div class="royal-footnote">
-    <div><span>🕌</span>  AI Art  </span></div>
-    <div><span>⚜️</span>  Inspired by the Verses of the The Holy Quran  <span>⚜️</span></div>
+    <div><span>🕌</span>  AI Art  </div>
+    <div><span>⚜️</span>  Inspired by the Verses of The Holy Quran  <span>⚜️</span></div>
     <div><span>📜</span>  Copyright · 2026 &copy;  · Hashim Hilal</div>
   </div>
 </div>
@@ -477,7 +504,7 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  // Initialize carousel with larger view, loop for elegance
+  // Initialize carousel
   const swiper = new Swiper('.mySwiper', {
     loop: true,
     effect: 'slide',
