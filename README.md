@@ -31,7 +31,8 @@ The result is an experience of reverence: scripture made visible, contemplation 
 
 ## 🖼️ Gallery : AI-Generated Artwork
 
-- Each image is uniquely crafted to reflect the imagery and emotion of its corresponding verse
+Each image is uniquely crafted to reflect the imagery and emotion of its corresponding verse
+
 ---
 
 ## ✨ Features
