@@ -29,14 +29,13 @@ The result is an experience of reverence: scripture made visible, contemplation 
 
 ---
 
-## 🖼️ Gallery
+## 🖼️ Gallery : AI-Generated Artwork
 
-The gallery currently features AI-generated artwork 
+- Each image is uniquely crafted to reflect the imagery and emotion of its corresponding verse
 ---
 
 ## ✨ Features
 
-- **AI-Generated Artwork** — Each image is uniquely crafted to reflect the imagery and emotion of its corresponding verse
 - **Gold-Framed Carousel** — An elegant, auto-advancing gallery inspired by illuminated manuscript aesthetics
 - **Sacred Typography** — Arabesque overlays and royal ornamentation evoking classical Islamic calligraphy
 - **Classical Translation** — Verse text drawn from Abdullah Yusuf Ali's revered English translation
