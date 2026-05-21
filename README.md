@@ -31,20 +31,7 @@ The result is an experience of reverence: scripture made visible, contemplation 
 
 ## 🖼️ Gallery
 
-The gallery currently features AI-generated artwork for the following Sūras:
-
-| # | Sūra | Theme |
-|---|------|-------|
-| 24 | **An-Nūr** — The Light | The divine light parable |
-| 53 | **An-Najm** — The Star | Revelation and prophecy |
-| 55 | **Ar-Raḥmān** — The Most Gracious | Creation and divine mercy |
-| 75 | **Al-Qiyāmat** — The Resurrection | The Day of Reckoning |
-| 81 | **At-Takwīr** — The Folding Up | The unfolding of end times |
-| 82 | **Al-Infiṭār** — The Cleaving Asunder | Sky, stars, and judgement |
-| 84 | **Al-Inshiqāq** — The Rending Asunder | The journey of the soul |
-| 86 | **Aṭ-Ṭāriq** — The Night-Visitant | The piercing star |
-| 100 | **Al-ʿĀdiyāt** — Those That Run | Vigour and heedlessness |
-
+The gallery currently features AI-generated artwork 
 ---
 
 ## ✨ Features
@@ -70,20 +57,7 @@ The gallery currently features AI-generated artwork for the following Sūras:
 
 ---
 
-## 🚀 Getting Started
-
-This project is a single-file static site — no build step required.
-
-```bash
-# Clone the repository
-git clone https://github.com/HashimsGitHub/Quran_Art.git
-
-# Open in your browser
-cd Quran_Art
-open index.html
-```
-
-Or simply visit the live site at **[quran-art.cloud](https://www.quran-art.cloud/)**.
+Visit the live site at **[quran-art.cloud](https://www.quran-art.cloud/)**.
 
 ---
 
