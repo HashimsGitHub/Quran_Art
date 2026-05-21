@@ -57,7 +57,7 @@ Each image is uniquely crafted to reflect the imagery and emotion of its corresp
 
 ---
 
-Visit the live site at **[quran-art.cloud](https://www.quran-art.cloud/)**.
+Visit the live site at **[www.quran-art.cloud](https://www.quran-art.cloud/)**.
 
 ---
 
