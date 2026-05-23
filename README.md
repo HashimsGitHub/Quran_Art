@@ -8,7 +8,7 @@
 
 ---
 
-◈ &nbsp; *Each sacred verse echoing the splendor of Topkapi manuscripts* &nbsp; ◈
+
 
 [![Live Site](https://img.shields.io/badge/🌐%20Live%20Site-quran--art.cloud-d4af37?style=for-the-badge&labelColor=0a0601)](https://www.quran-art.cloud/)
 &nbsp;
