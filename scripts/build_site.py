@@ -33,7 +33,9 @@ def build_html():
   <meta property="og:image" content="https://smbclouddrive.blob.core.windows.net/quran-art/QuranLogo.jpg">
 
   <!-- Favicon / Fonts -->
-  <link rel="icon" type="image/jpeg" href="https://smbclouddrive.blob.core.windows.net/quran-art/QuranLogo.jpg">
+  <link rel="icon" href="https://smbclouddrive.blob.core.windows.net/quran-art/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="https://smbclouddrive.blob.core.windows.net/quran-art/favicon.png">
+  <link rel="apple-touch-icon" href="https://smbclouddrive.blob.core.windows.net/quran-art/images/QuranLogo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
@@ -326,11 +328,11 @@ def build_html():
                   </div>
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                       <!-- Arabic Column Frame -->
-                      <div class="arabic-font text-right text-2xl md:text-3xl text-amber-100 leading-loose" dir="rtl">
+                      <div class="arabic-font text-right text-lg md:text-xl text-amber-100 leading-relaxed" dir="rtl">
                           ${item.arabic_text}
                       </div>
                       <!-- English Column Frame -->
-                      <div class="text-amber-200/90 text-sm md:text-base leading-relaxed border-t md:border-t-0 md:border-l border-amber-500/10 pt-4 md:pt-0 md:md:pl-6 text-justify font-sans">
+                      <div class="text-amber-200/90 text-sm md:text-base leading-relaxed border-t md:border-t-0 md:border-l border-amber-500/10 pt-4 md:pt-0 md:pl-6 text-justify font-sans">
                           ${item.english_translation}
                       </div>
                   </div>

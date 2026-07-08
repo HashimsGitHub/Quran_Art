@@ -13,8 +13,10 @@
   <meta property="og:description" content="Search across the entire Holy Quran with translation from Abdullah Yusuf Ali.">
   <meta property="og:image" content="https://smbclouddrive.blob.core.windows.net/quran-art/QuranLogo.jpg">
 
-  <!-- Favicon / Fonts -->
-  <link rel="icon" type="image/jpeg" href="https://smbclouddrive.blob.core.windows.net/quran-art/QuranLogo.jpg">
+  <!-- Favicon / Apple Touch Icon -->
+  <link rel="icon" href="https://smbclouddrive.blob.core.windows.net/quran-art/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="https://smbclouddrive.blob.core.windows.net/quran-art/favicon.png">
+  <link rel="apple-touch-icon" href="https://smbclouddrive.blob.core.windows.net/quran-art/images/QuranLogo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
@@ -189,7 +191,7 @@
       <div class="diamond"></div>
     </div>
     <h1>
-      <span>⚜️</span> VERSE KNOWLEDGE ENGINE <span>⚜️</span>
+      <span>⚜️</span> VERSE FINDER <span>⚜️</span>
     </h1>
     <div class="ornament">
       <div class="line" style="width: 100px;"></div>
@@ -205,7 +207,7 @@
       </select>
     </div>
     <div class="md:col-span-2">
-      <label class="block text-xs uppercase tracking-wider mb-2 text-amber-400/80 font-semibold">Global Key Term Query Search</label>
+      <label class="block text-xs uppercase tracking-wider mb-2 text-amber-400/80 font-semibold">Search in English</label>
       <input id="searchInput" type="text" placeholder="Type keywords (e.g., 'Light', 'Merciful', 'Moon') to search across all Sūras..." 
              class="royal-input w-full rounded-lg px-4 py-3 text-sm placeholder-amber-700/60">
     </div>
@@ -299,11 +301,11 @@
                   </div>
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                       <!-- Arabic Column Frame -->
-                      <div class="arabic-font text-right text-2xl md:text-3xl text-amber-100 leading-loose" dir="rtl">
+                      <div class="arabic-font text-right text-lg md:text-xl text-amber-100 leading-relaxed" dir="rtl">
                           ${item.arabic_text}
                       </div>
                       <!-- English Column Frame -->
-                      <div class="text-amber-200/90 text-sm md:text-base leading-relaxed border-t md:border-t-0 md:border-l border-amber-500/10 pt-4 md:pt-0 md:md:pl-6 text-justify font-sans">
+                      <div class="text-amber-200/90 text-sm md:text-base leading-relaxed border-t md:border-t-0 md:border-l border-amber-500/10 pt-4 md:pt-0 md:pl-6 text-justify font-sans">
                           ${item.english_translation}
                       </div>
                   </div>
