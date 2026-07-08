@@ -345,6 +345,54 @@
         font-size: 1.6rem;
       }
     }
+
+    /* Interactive Search Feature Navigation Link Styling */
+    .search-feature-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 1.2rem;
+      padding: 0.6rem 2rem;
+      border-radius: 40px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      color: #f3cf6a;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      box-shadow: inset 0 0 10px rgba(212,175,55,0.05);
+    }
+    .search-feature-btn:hover {
+      background: rgba(212, 175, 55, 0.25);
+      color: #ffffff;
+      border-color: #fde876;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4), inset 0 0 5px rgba(255,255,255,0.2);
+      text-shadow: 0 0 4px gold;
+      transform: translateY(-1px);
+    }
+
+    .ornament {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 1rem 0 1rem;
+    }
+    .ornament .diamond {
+      width: 8px;
+      height: 8px;
+      background: #d4af37;
+      transform: rotate(45deg);
+      box-shadow: 0 0 6px gold;
+    }
+    .ornament .line {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #d4af37, #d4af37, transparent);
+      align-self: center;
+    }
   </style>
 </head>
 <body>
@@ -541,7 +589,12 @@
     </div>
     <p>Each sacred verse echoing the splendor of Topkapi manuscripts with translation from Abdullah Yusuf Ali.</p>
   </div>
-
+  <!-- Hyperlink Button directing strictly to search.html page feature -->
+    <div style="text-align: center; width: 100%;">
+      <a href="https://smbclouddrive.blob.core.windows.net/quran-art/search.html" class="search-feature-btn">
+        🔍 Launch Verse Search Engine
+      </a>
+    </div>
   <div class="royal-footnote">
     <div><span>🕌</span>  AI Art  </div>
     <div><span>⚜️</span>  Inspired by the Verses of The Holy Quran  <span>⚜️</span></div>
