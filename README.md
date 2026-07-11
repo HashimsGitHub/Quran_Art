@@ -45,6 +45,27 @@ Each image is uniquely crafted to reflect the imagery and emotion of its corresp
 
 ---
 
+---
+
+## 🔎 Search the Quran and Hadith
+
+The gallery includes two companion search experiences:
+
+- **Quran Search Engine** — Search the English translation of the Holy Quran by keyword and browse matching verses.
+- **Hadith Search Engine** — Search the English Hadith collections, including Sahih al-Bukhari, Sahih Muslim, Sunan Abu Dawud, Jami At Tirmidhi, and more.
+
+The Hadith search page downloads and prepares all English SQLite collections from Azure Blob Storage when it opens, then searches them locally in the browser. Search terms are not sent to a server. The first visit may take a little longer while the collections are loaded.
+
+### Hadith data source
+
+English Hadith database archives are taken from at:
+
+https://github.com/IsmailHosenIsmailJames/compressed_hadith_sqlite/tree/master 
+
+The browser implementation uses standard SQLite text matching for broad WebAssembly compatibility. 
+
+---
+
 ## 🛠️ Tech Stack
 
 | Layer | Technology |
