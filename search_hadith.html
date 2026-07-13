@@ -32,7 +32,18 @@
     .result { padding:23px 25px; }.result-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:9px 15px; margin-bottom:14px; }
     .book { color:var(--green); font-weight:700; }.number { color:var(--muted); font-size:.9rem; }.section { margin-left:auto; color:var(--muted); font-size:.86rem; }
     .hadith-text { margin:0; font:500 1.1rem/1.72 "Source Serif 4",Georgia,serif; white-space:pre-line; }.grades { display:flex; flex-wrap:wrap; gap:7px; margin-top:16px; }.grade { color:#dceee1; background:rgba(117,214,155,.09); border:1px solid rgba(117,214,155,.2); border-radius:100px; padding:3px 9px; font-size:.78rem; }
-    .empty { color:var(--muted); text-align:center; padding:45px 20px; border:1px dashed var(--line); border-radius:16px; }.footer { margin:38px 0 0; color:#78867e; font-size:.8rem; text-align:center; }
+    .empty { color:var(--muted); text-align:center; padding:45px 20px; border:1px dashed var(--line); border-radius:16px; }.footer { margin:38px 0 0; color:#78867e; font-size:.8rem; text-align:center; }.parent-footer { margin-top:42px; padding:22px 8px 0; border-top:1px solid rgba(212,175,55,.2); color:rgba(212,175,55,.65); display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; font-size:.76rem; letter-spacing:1px; text-transform:uppercase; }
+    .pagination { display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; margin:26px 0 4px; }
+    .pagination button { border:1px solid var(--line); border-radius:9px; padding:9px 14px; cursor:pointer; color:var(--ink); background:#0b1712; font:600 .88rem inherit; }
+    .pagination button:hover:not(:disabled) { border-color:var(--green); }
+    .pagination button:disabled { opacity:.4; cursor:default; }
+    .pagination button.current { background:var(--green); color:#092014; border-color:var(--green); }
+    .pagination .page-info { color:var(--muted); font-size:.85rem; margin:0 6px; }
+    .progress-container { margin:14px 2px 0; }
+    .progress-track { position:relative; height:8px; border-radius:100px; background:rgba(255,255,255,.07); overflow:hidden; }
+    .progress-fill { position:relative; height:100%; width:0%; border-radius:100px; background:var(--green); transition:width .35s ease; overflow:hidden; }
+    .progress-fill::after { content:""; position:absolute; inset:0; background:repeating-linear-gradient(45deg,rgba(255,255,255,.28) 0 10px,transparent 10px 20px); background-size:28px 28px; animation:progress-stripes 1s linear infinite; }
+    @keyframes progress-stripes { from { background-position:0 0; } to { background-position:28px 0; } }
     @media(max-width:700px) { .shell { width:min(100% - 24px,1000px); padding-top:28px; }.source-row,.controls{grid-template-columns:1fr}.controls button,.source-row button{width:100%}.result{padding:19px}.section{margin-left:0;width:100%} }
     /* Quran Art royal theme overrides */
     :root { --ink:#f6e3a8; --muted:#bda96e; --line:rgba(212,175,55,.42); --green:#d4af37; --deep:#020100; --warning:#f3cf6a; }
@@ -43,7 +54,9 @@
     .royal-header { text-align:center; margin-bottom:28px; padding:18px 16px; border-top:2px solid rgba(212,175,55,.3); border-bottom:2px solid rgba(212,175,55,.6); background:linear-gradient(90deg,transparent,rgba(212,175,55,.08),transparent); }.royal-header h1 { margin:7px 0; color:#d4af37; font:500 clamp(2rem,6vw,3.35rem)/1.1 Georgia,serif; letter-spacing:4px; text-transform:uppercase; text-shadow:0 0 8px #b8860b,0 0 18px #8b6508; }.ornament { display:flex; justify-content:center; align-items:center; gap:12px; margin:8px 0; }.diamond { width:8px; height:8px; background:#d4af37; transform:rotate(45deg); box-shadow:0 0 6px gold; }.line { width:60px; height:1px; background:linear-gradient(90deg,transparent,#d4af37,#d4af37,transparent); }.bismillah { font:1.75rem Amiri,serif; color:#d4af37; }.intro { margin:14px auto 0; color:#d9c889; font-size:1rem; }
     .search-panel { border-color:var(--line); border-radius:18px 5px 18px 5px; background:rgba(15,11,5,.94); box-shadow:0 15px 30px -10px rgba(0,0,0,.9); } label { color:#e6c87a; } input,select { border-color:rgba(212,175,55,.5); color:#f6e3a8; background:rgba(10,6,1,.85); border-radius:8px; } input:focus,select:focus { border-color:#f3cf6a; box-shadow:0 0 10px rgba(212,175,55,.3); } select option { background:#0a0601; color:#f6e3a8; } button { border:1px solid #f3cf6a; border-radius:8px; color:#1b1202; background:linear-gradient(135deg,#c9a03d,#fde876,#b47c2e); } .hint,#status { color:#d9c889; }.hint code { color:#f6e3a8; }
     .result { border:3px solid transparent; border-image:linear-gradient(145deg,#c9a03d,#fde876,#b47c2e,#efcd82) 1; border-radius:0; background:rgba(15,11,5,.94); box-shadow:0 15px 30px -10px rgba(0,0,0,.9); }.result-head { border-bottom:1px solid rgba(212,175,55,.25); }.book { color:#d4af37; }.number,.section { color:#c9b06c; }.hadith-text { color:#f6e3a8; }.grade { color:#f6e3a8; background:rgba(212,175,55,.1); border-color:rgba(212,175,55,.32); }.empty { color:#d9c889; border-color:var(--line); }.footer { margin-top:42px; padding:22px 8px 0; border-top:1px solid rgba(212,175,55,.2); color:rgba(212,175,55,.65); }
-    @media(max-width:700px) { body::before { inset:10px; }.shell { width:min(100% - 28px,1100px); padding-top:20px; }.topbar,.footer { justify-content:center; text-align:center; } }
+    .pagination button { border-color:rgba(212,175,55,.5); color:#f6e3a8; background:rgba(10,6,1,.85); } .pagination button:hover:not(:disabled) { border-color:#f3cf6a; } .pagination button.current { background:linear-gradient(135deg,#c9a03d,#fde876,#b47c2e); color:#1b1202; border-color:#f3cf6a; } .pagination .page-info { color:#d9c889; }
+    .progress-track { background:rgba(212,175,55,.14); } .progress-fill { background:linear-gradient(135deg,#c9a03d,#fde876,#b47c2e); }
+    @media(max-width:700px) { body::before { inset:10px; }.shell { width:min(100% - 28px,1100px); padding-top:20px; }.topbar,.footer,.parent-footer { justify-content:center; text-align:center; } }
   </style>
 </head>
 <body>
@@ -59,17 +72,25 @@
     </header>
     <form id="search-form" class="search-panel">
       <div class="controls">
-        <div><label for="query">Words or phrase</label><input id="query" type="search" placeholder="e.g. intention, charity, prayer" autocomplete="off" required></div>
+        <div><label for="query">Words, phrase, or Hadith number</label><input id="query" type="search" placeholder="e.g. intention, charity, prayer, or 42" autocomplete="off" required></div>
         <div><label for="book">Collection</label><select id="book" disabled><option>Loading English books…</option></select></div>
         <button id="search-button" type="submit" disabled>Search</button>
       </div>
-      <p class="hint">All English collections are loaded locally when this page opens. Searches never send your terms to a server.</p>
+      <p class="hint">Search by words, an exact Hadith number, or both. All English collections are loaded locally; searches never send your terms to a server.</p>
     </form>
     <p id="status" aria-live="polite">Loading the English collection list…</p>
+    <div id="progress-container" class="progress-container" hidden>
+      <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+    </div>
     <section id="results" aria-live="polite"></section>
-    <p class="footer">Powered by the repository’s English SQLite databases. Searches run locally in your browser.</p>
+    <nav id="pagination" class="pagination" aria-label="Search result pages" hidden></nav>
+    <!-- Standard Parent Matching Footer Component -->
+    <div class="parent-footer">
+      <div>&#x1F4DC; SQLite Hadith Database - MD. Ismail Hosen James</div>
+      <div>Copyright &middot; 2026 &copy; &middot; Hashim Hilal</div>
+    </div>
   </main>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
   <script>
@@ -80,8 +101,14 @@
       const button = document.querySelector('#search-button');
       const status = document.querySelector('#status');
       const results = document.querySelector('#results');
+      const pagination = document.querySelector('#pagination');
+      const progressContainer = document.querySelector('#progress-container');
+      const progressFill = document.querySelector('#progress-fill');
       const databases = new Map();
       let books = [], SQL;
+      const PAGE_SIZE = 20;
+      let allResults = [];
+      let currentPage = 1;
       const englishBooks = [
         { book: 'eng-abudawud', name: 'Sunan Abu Dawud', hadith_count: 5274, zip_path: 'eng-abudawud.sqlite.zip' },
         { book: 'eng-bukhari', name: 'Sahih al Bukhari', hadith_count: 7278, zip_path: 'eng-bukhari.sqlite.zip' },
@@ -96,8 +123,15 @@
       ];
 
       const setStatus = (message, kind = '') => { status.textContent = message; status.className = kind; };
+      const setStatusHTML = (html, kind = '') => { status.innerHTML = html; status.className = kind; };
+      const showProgress = () => { progressContainer.hidden = false; progressFill.style.width = '0%'; };
+      const updateProgress = (done, total) => { progressFill.style.width = `${Math.min(100, Math.round((done / total) * 100))}%`; };
+      const hideProgress = () => { progressContainer.hidden = true; progressFill.style.width = '0%'; };
+      // Yields to the browser's render loop so status/progress updates actually paint
+      // before the next (synchronous, potentially slow) SQL scan blocks the main thread.
+      const paintYield = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
       const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
-      const searchTerms = value => value.trim().match(/"[^"]+"|[\p{L}\p{N}_]+/gu)?.map(token => token.replace(/^"|"$/g, '')) || [];
+      const searchTerms = value => value.trim().match(/"[^"]+"|\d+(?:[.-]\d+)*|[\p{L}\p{N}_]+/gu)?.map(token => token.replace(/^"|"$/g, '')) || [];
       const ZIP_BASE_URL = 'https://smbclouddrive.blob.core.windows.net/quran-art/hadith/';
       const zipUrl = path => new URL(path.split('/').pop(), ZIP_BASE_URL).href;
 
@@ -121,12 +155,48 @@
         results.innerHTML = rows.map(row => `<article class="result"><div class="result-head"><span class="book">${escapeHtml(row.book)}</span><span class="number">Hadith ${escapeHtml(row.hadith_number)}</span><span class="section">${escapeHtml(row.section_name || 'Section unavailable')}</span></div><p class="hadith-text">${escapeHtml(row.text)}</p>${row.grades.length ? `<div class="grades">${row.grades.map(grade => `<span class="grade">${escapeHtml(grade)}</span>`).join('')}</div>` : ''}</article>`).join('');
       }
 
+      function renderPagination(totalPages) {
+        if (totalPages <= 1) { pagination.hidden = true; pagination.innerHTML = ''; return; }
+        const pageButton = (label, page, opts = {}) => `<button type="button" data-page="${page}" ${opts.current ? 'class="current" aria-current="page"' : ''} ${opts.disabled ? 'disabled' : ''}>${label}</button>`;
+        let buttons = [];
+        buttons.push(pageButton('‹ Prev', currentPage - 1, { disabled: currentPage === 1 }));
+        const windowSize = 2;
+        const pagesToShow = new Set([1, totalPages]);
+        for (let p = currentPage - windowSize; p <= currentPage + windowSize; p++) if (p >= 1 && p <= totalPages) pagesToShow.add(p);
+        const sortedPages = [...pagesToShow].sort((a, b) => a - b);
+        let previousPage = 0;
+        for (const p of sortedPages) {
+          if (p - previousPage > 1) buttons.push('<span class="page-info">…</span>');
+          buttons.push(pageButton(String(p), p, { current: p === currentPage }));
+          previousPage = p;
+        }
+        buttons.push(pageButton('Next ›', currentPage + 1, { disabled: currentPage === totalPages }));
+        pagination.innerHTML = buttons.join('') + `<span class="page-info">Page ${currentPage} of ${totalPages}</span>`;
+        pagination.hidden = false;
+      }
+
+      function goToPage(page) {
+        const totalPages = Math.max(1, Math.ceil(allResults.length / PAGE_SIZE));
+        currentPage = Math.min(Math.max(1, page), totalPages);
+        const start = (currentPage - 1) * PAGE_SIZE;
+        render(allResults.slice(start, start + PAGE_SIZE));
+        renderPagination(totalPages);
+        results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      pagination.addEventListener('click', event => {
+        const target = event.target.closest('button[data-page]');
+        if (!target || target.disabled) return;
+        goToPage(Number(target.dataset.page));
+      });
+
       async function searchBook(book, terms) {
         const db = await getDatabase(book);
         // sql.js's browser WebAssembly build does not ship the FTS5 extension.
         // Use standard SQLite LIKE instead, so every included database works in-browser.
-        const where = terms.map(() => 'h.text LIKE ? COLLATE NOCASE').join(' AND ');
-        const found = db.exec(`SELECT h.id, h.hadith_number, h.text, s.section_name FROM hadiths h LEFT JOIN sections s ON h.section_id = s.id WHERE ${where} LIMIT 20`, terms.map(term => `%${term}%`));
+        const where = terms.map(() => '(h.text LIKE ? COLLATE NOCASE OR CAST(h.hadith_number AS TEXT) = ?)').join(' AND ');
+        const parameters = terms.flatMap(term => [`%${term}%`, term]);
+        const found = db.exec(`SELECT h.id, h.hadith_number, h.text, s.section_name FROM hadiths h LEFT JOIN sections s ON h.section_id = s.id WHERE ${where}`, parameters);
         if (!found.length) return [];
         return found[0].values.map(([id, hadith_number, text, section_name]) => {
           const gradeResult = db.exec('SELECT scholar_name, grade FROM grades WHERE hadith_id = ?', [id]);
@@ -137,39 +207,64 @@
 
       form.addEventListener('submit', async event => {
         event.preventDefault();
+        const rawQuery = queryInput.value.trim();
         const terms = searchTerms(queryInput.value);
         if (!terms.length) { setStatus('Enter at least one word to search.', 'error'); return; }
         const selected = bookSelect.value === 'all' ? books : books.filter(book => book.book === bookSelect.value);
-        button.disabled = true; results.innerHTML = '';
+        button.disabled = true; results.innerHTML = ''; pagination.hidden = true; pagination.innerHTML = '';
+        showProgress();
+        await paintYield();
         try {
           const collected = [];
           for (let index = 0; index < selected.length; index++) {
             setStatus(`Searching ${selected[index].name} (${index + 1} of ${selected.length})…`, 'loading');
+            await paintYield();
             collected.push(...await searchBook(selected[index], terms));
+            updateProgress(index + 1, selected.length);
+            await paintYield();
           }
-          render(collected);
-          setStatus(`${collected.length} matching Hadith${collected.length === 1 ? '' : 's'} found${selected.length > 1 ? ` across ${selected.length} English collections` : ''}.`);
+          allResults = collected;
+          goToPage(1);
+          const totalPages = Math.max(1, Math.ceil(collected.length / PAGE_SIZE));
+          setStatusHTML(`${collected.length} matching Hadith${collected.length === 1 ? '' : 's'} found for <strong>${escapeHtml(rawQuery)}</strong>${selected.length > 1 ? ` across ${selected.length} English collections` : ''}${totalPages > 1 ? ` — showing ${PAGE_SIZE} per page (${totalPages} pages).` : '.'}`);
         } catch (error) { console.error(error); setStatus(error.message, 'error'); }
-        finally { button.disabled = false; }
+        finally { button.disabled = false; hideProgress(); }
+      });
+
+      function resetSearch() {
+        allResults = []; currentPage = 1;
+        results.innerHTML = ''; pagination.hidden = true; pagination.innerHTML = '';
+        if (books.length) setStatus(`${books.length} English collections are loaded and ready to search.`);
+      }
+
+      queryInput.addEventListener('input', () => {
+        if (!queryInput.value.trim()) resetSearch();
       });
 
       async function loadBooks() {
         button.disabled = bookSelect.disabled = true;
-        results.innerHTML = '';
+        results.innerHTML = ''; pagination.hidden = true; pagination.innerHTML = '';
+        allResults = []; currentPage = 1;
         databases.forEach(database => database.close());
         databases.clear();
         setStatus('Preparing the English collections…', 'loading');
+        showProgress();
+        await paintYield();
         try {
           SQL = await initSqlJs({ locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/${file}` });
           books = englishBooks;
           bookSelect.innerHTML = '<option value="all">All English books</option>' + books.map(book => `<option value="${escapeHtml(book.book)}">${escapeHtml(book.name)} (${book.hadith_count.toLocaleString()})</option>`).join('');
           for (let index = 0; index < books.length; index++) {
             setStatus(`Loading ${books[index].name} (${index + 1} of ${books.length})…`, 'loading');
+            await paintYield();
             await getDatabase(books[index]);
+            updateProgress(index + 1, books.length);
+            await paintYield();
           }
           bookSelect.disabled = button.disabled = false;
           setStatus(`${books.length} English collections are loaded and ready to search.`);
         } catch (error) { console.error(error); setStatus(`Could not prepare the search engine: ${error.message}`, 'error'); }
+        finally { hideProgress(); }
       }
       loadBooks();
     })();
