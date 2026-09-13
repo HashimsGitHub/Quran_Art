@@ -173,9 +173,11 @@
 
     /* ========= CAROUSEL (SWIPER) STYLES ========= */
     .carousel-section {
-      margin: 2rem 0 3rem;
+      margin: 2rem auto 3rem;
       position: relative;
-      padding: 0 0.5rem;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0;
     }
     .carousel-title {
       text-align: center;
@@ -189,48 +191,53 @@
     .swiper {
       width: 100%;
       height: auto;
-      padding: 20px 0 40px;
+      padding: 20px 58px 42px;
+      overflow: hidden;
     }
     .swiper-slide {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+      height: auto;
       transition: transform 0.5s;
     }
     
-    /* Majestic Gold Frame - ZERO GAP VERSION */
+    /* Dynamic gold frame: width follows each artwork */
     .carousel-gold-frame {
+      --art-width: 850px;
       background: linear-gradient(145deg, #c9a03d, #fde876, #b47c2e, #efcd82);
-      padding: 18px;
+      padding: clamp(9px, 1.4vw, 18px);
       border-radius: 32px 12px 32px 12px;
       box-shadow: 0 25px 40px -12px rgba(0,0,0,0.8), inset 0 1px 4px rgba(255,255,200,0.6);
-      width: 100%;
-      max-width: 850px;
+      width: min(var(--art-width), 100%);
+      max-width: 100%;
       margin: 0 auto;
-      transition: all 0.3s ease;
+      transition: width 0.28s ease, transform 0.3s ease;
       cursor: pointer;
     }
     
-    /* Inner frame - ZERO PADDING, IMAGE FILLS COMPLETELY */
+    /* Artwork wrapper follows the image rather than creating side gutters */
     .carousel-frame-inner {
-      background: #1f1b12;
+      background: transparent;
       padding: 0;
       border-radius: 20px 2px 20px 2px;
       overflow: hidden;
       width: 100%;
-      /* Let the image determine the height naturally */
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     
-    /* IMAGE FILLS FRAME COMPLETELY - NO GAPS */
+    /* Preserve every artwork's natural ratio and fit it to the current viewport */
     .carousel-image {
+      display: block;
       width: 100%;
       height: auto;
-      display: block;
+      max-width: 100%;
+      max-height: min(72vh, 760px);
+      object-fit: contain;
       border-radius: 0;
       transition: transform 0.4s ease;
-      /* Remove any max-height constraints */
-      max-height: none;
     }
     
     .swiper-slide:hover .carousel-image {
@@ -256,26 +263,32 @@
       margin: 2px 0;
     }
 
-    /* Swiper navigation custom gold buttons */
+    /* Navigation follows the active artwork instead of the browser edges */
     .swiper-button-next,
     .swiper-button-prev {
       color: #d4af37;
-      background: rgba(0,0,0,0.5);
-      width: 50px;
-      height: 50px;
+      background: rgba(0,0,0,0.72);
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(212,175,55,.42);
       border-radius: 50%;
       backdrop-filter: blur(6px);
-      transition: 0.2s;
+      top: var(--nav-top, 50%);
+      margin-top: -23px;
+      transition: left .28s ease, right .28s ease, top .28s ease, background .2s ease;
     }
+    .swiper-button-prev { left: var(--nav-left, 8px); }
+    .swiper-button-next { right: var(--nav-right, 8px); }
     .swiper-button-next:after,
     .swiper-button-prev:after {
-      font-size: 24px;
+      font-size: 21px;
       font-weight: bold;
     }
     .swiper-button-next:hover,
     .swiper-button-prev:hover {
-      background: rgba(212,175,55,0.3);
+      background: rgba(212,175,55,0.28);
       color: #ffea9e;
+      border-color: #fde876;
     }
     .swiper-pagination-bullet {
       background: #c2a044;
@@ -315,35 +328,44 @@
     }
 
     /* Responsive adjustments */
+    @media (min-width: 1200px) {
+      .carousel-section { max-width: 1180px; }
+      .swiper { padding-left: 68px; padding-right: 68px; }
+    }
+    @media (max-width: 1024px) {
+      .container { padding-left: 1.1rem; padding-right: 1.1rem; }
+      .swiper { padding-left: 54px; padding-right: 54px; }
+      .carousel-image { max-height: min(68vh, 680px); }
+    }
     @media (max-width: 780px) {
-      .container {
-        padding: 1rem;
-      }
-      .royal-header h1 {
-        font-size: 2.2rem;
-      }
+      .container { padding: 1rem; }
+      .royal-header h1 { font-size: 2.2rem; }
+      .carousel-section { margin-top: 1.2rem; }
+      .swiper { padding: 12px 42px 38px; }
       .carousel-gold-frame {
-        padding: 12px;
+        padding: 10px;
+        border-radius: 22px 8px 22px 8px;
       }
+      .carousel-frame-inner { border-radius: 14px 3px 14px 3px; }
+      .carousel-image { max-height: 66vh; }
       .swiper-button-next,
       .swiper-button-prev {
-        width: 35px;
-        height: 35px;
+        width: 34px;
+        height: 34px;
+        margin-top: -17px;
       }
-      body::before {
-        top: 10px;
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
-      }
-      .slide-caption {
-        font-size: 1rem;
-      }
+      .swiper-button-next:after,
+      .swiper-button-prev:after { font-size: 16px; }
+      body::before { top: 10px; left: 10px; right: 10px; bottom: 10px; }
+      .slide-caption { font-size: 1rem; }
+      .slide-desc { font-size: .82rem; }
     }
     @media (max-width: 540px) {
-      .carousel-title {
-        font-size: 1.6rem;
-      }
+      .carousel-title { font-size: 1.45rem; letter-spacing: 2px; }
+      .swiper { padding-left: 34px; padding-right: 34px; }
+      .carousel-image { max-height: 60vh; }
+      .slide-caption { margin-top: .85rem; }
+      .slide-desc { line-height: 1.4; }
     }
 
     /* Interactive Search Feature Navigation Link Styling */
@@ -559,7 +581,125 @@
           </div>
         </div>
 
-        <!-- Slide 11: Ar-Rahman -->
+        <!-- Slide 11: End time -->
+        <div class="swiper-slide">
+          <div class="carousel-gold-frame">
+            <div class="carousel-frame-inner">
+              <img class="carousel-image" src="https://smbclouddrive.blob.core.windows.net/quran-art/End-Times.jpeg" alt="End-Times">
+            </div>
+            <div class="slide-caption">﴾ Multiple Verses and Hadiths﴿</div>
+            <div class="slide-desc" style="color: #020100;">
+              <p>Surah 22 - Al Hajj:47 Verily A Day in the sight of thy Lord Is like a thousand years Of your reckoning</p>
+              <p>Surah 70 - Al Ma'arij:4 The angels and The Spirit ascend Unto Him in a Day The measure whereof Is (as) fifty thousand years</p>
+              <p>Sunan Abu DawudHadith : 4321 Al-nawwas b. Sim’an al-Kilabi said:The Messenger of Allah (ﷺ) mentioned the Dajjal (Antichrist) saying: If he comes forth while I am among you I shall be the one who will dispute with him on your behalf, but if he comes forth when I am not among you, a man must dispute on his own behalf, and Allah will take my place in looking after every Muslim. Those of you who live up to his time should recite over him the opening verses of Surat al – Kahf, for they are your protection from his trial. We asked: How long will he remain on the earth ? He replied : Forty days, one like a year, one like a month, one like a week, and rest of his days like yours. We asked : Messenger of Allah, will one day’s prayer suffice us in this day which will be like a year ? He replied : No, you must make an estimate of its extent. Then Jesus son of Marry will descend at the white minaret to the east of Damascus. He will then catch him up at the date of Ludd and kill him</p>
+            </div>
+          </div>
+          </div>
+      
+        <!-- Slide 12: Sounds of the Unseen -->
+        <div class="swiper-slide">
+          <div class="carousel-gold-frame">
+            <div class="carousel-frame-inner">
+              <img class="carousel-image"
+                  src="https://smbclouddrive.blob.core.windows.net/quran-art/UnseenSounds.png"
+                  alt="Sounds of the Unseen">
+            </div>
+
+            <div class="slide-caption">﴾ Sounds of the Unseen — Qur'an and Hadith ﴿</div>
+
+            <div class="slide-desc" style="color: #020100;">
+
+              <p>
+                <strong>1. A Heavenly Gate Opened — Sahih Muslim, Hadith 1877:</strong>
+                Ibn 'Abbas reported that while Gabriel was sitting with the Messenger of Allah (ﷺ),
+                he heard a creaking sound above him. He lifted his head and said:
+                “This is a gate opened in heaven today which had never been opened before.”
+                Then an angel descended through it, and he said:
+                “This is an angel who came down to the earth who had never come down before.”
+                He greeted the Prophet (ﷺ) and said:
+                “Rejoice in two lights given to you which have not been given to any prophet
+                before you: Fatihat al-Kitab and the concluding verses of Surah al-Baqarah.
+                You will never recite a letter from them for which you will not be given.”
+              </p>
+
+              <p>
+                <strong>2. A Voice From the Sky — Sahih al-Bukhari, Hadith 4:</strong>
+                Jabir bin 'Abdullah Al-Ansari reported that the Prophet (ﷺ), while speaking
+                about the pause in revelation, said:
+                “While I was walking, all of a sudden I heard a voice from the sky.
+                I looked up and saw the same angel who had visited me at the cave of Hira'
+                sitting on a chair between the sky and the earth.”
+                The Prophet (ﷺ) became afraid, returned home and said,
+                “Wrap me in blankets.”
+                Then Allah revealed:
+                “O you wrapped up in garments! Arise and warn...”
+              </p>
+
+              <p>
+                <strong>3. Like Chains on Rock — Sahih al-Bukhari, Hadith 4701:</strong>
+                Abu Huraira narrated that the Prophet (ﷺ) said:
+                “When Allah has ordained some affair in the Heaven, the angels beat with
+                their wings in obedience to His statement, which sounds like a chain dragged
+                over a rock.”
+                When fear is removed from their hearts, they ask:
+                “What did your Lord say?”
+                They reply:
+                “The Truth; and He is the Most High, the Most Great.”
+              </p>
+
+              <p>
+                <strong>4. The Creaking of the Pens — Sahih al-Bukhari, Hadith 349:</strong>
+                During the account of Al-Isra' and Al-Mi'raj, the Prophet (ﷺ) said:
+                “Then Gabriel ascended with me to a place where I heard the creaking
+                of the pens.”
+                The narration continues with Allah prescribing the prayers for the
+                followers of the Prophet (ﷺ), which were ultimately reduced to five daily
+                prayers while retaining the reward of fifty.
+              </p>
+
+              <p>
+                <strong>5. Thunder Praising Allah — Qur'an, Surah Ar-Ra'd 13:13:</strong>
+                “Nay, thunder repeateth His praises, and so do the angels, with awe:
+                He flingeth the loud-voiced thunder-bolts, and therewith He striketh
+                whomsoever He will... Yet these are the men who dare to dispute about God,
+                with the strength of His power supreme!”
+              </p>
+
+              <p>
+                <strong>6. Sounds From the Graves — Sahih Muslim, Hadith 7216:</strong>
+                Anas bin Malik reported that the Messenger of Allah (ﷺ) said:
+                “When the servant is placed in his grave, his companions retrace their steps,
+                and he hears the noise of their footsteps, two angels come to him and make
+                him sit and say to him: ‘What do you have to say about this person?’”
+                The believer testifies that Muhammad (ﷺ) is the servant and Messenger of Allah,
+                and he is then shown his place in Paradise.
+              </p>
+
+              <p>
+                <strong>7. The Palm Trunk Cried — Sahih al-Bukhari, Hadith 3584:</strong>
+                Jabir bin 'Abdullah narrated that the Prophet (ﷺ) used to stand beside a
+                date-palm while delivering the Friday sermon. When a pulpit was made for him
+                and he moved towards it,
+                “the date-palm cried like a child.”
+                The Prophet (ﷺ) descended from the pulpit and embraced it while it continued
+                moaning like a child being quietened. He said:
+                “It was crying for what it used to hear of religious knowledge given near it.”
+              </p>
+
+              <p>
+                <strong>8. Food Glorifying Allah — Sahih al-Bukhari, Hadith 3579:</strong>
+                'Abdullah narrated that while travelling with the Messenger of Allah (ﷺ),
+                the companions ran short of water. The Prophet (ﷺ) placed his hand in a vessel
+                containing a little water and water began flowing from between his fingers.
+                'Abdullah said:
+                “We heard the meal glorifying Allah when it was being eaten.”
+              </p>
+
+            </div>
+          </div>
+        </div>    
+
+        <!-- Slide 13: Ar-Rahman -->
         <div class="swiper-slide">
           <div class="carousel-gold-frame">
             <div class="carousel-frame-inner">
@@ -570,6 +710,7 @@
           </div>
         </div>
       </div>
+
 
       <!-- navigation & pagination -->
       <div class="swiper-button-next"></div>
@@ -597,6 +738,10 @@
       <a href="https://smbclouddrive.blob.core.windows.net/quran-art/search_hadith.html" class="search-feature-btn">
         📜 Launch Hadith Search Engine
       </a>
+
+      <a href="https://smbclouddrive.blob.core.windows.net/quran-art/ai-scholar.html" class="search-feature-btn">
+        ✦ Launch AI Scholar
+      </a>
     </div>
   <div class="royal-footnote">
     <div><span>🕌</span>  AI Art  </div>
@@ -608,24 +753,86 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  // Initialize carousel
-  const swiper = new Swiper('.mySwiper', {
+  // Size each carousel card to its artwork and keep navigation beside the active image.
+  function sizeCarouselArtwork() {
+    const swiperEl = document.querySelector('.mySwiper');
+    if (!swiperEl) return;
+
+    const availableViewport = Math.max(260, window.innerWidth - (window.innerWidth <= 780 ? 100 : 170));
+    const desktopCap = window.innerWidth >= 1200 ? 980 : window.innerWidth >= 780 ? 860 : availableViewport;
+
+    document.querySelectorAll('.swiper-slide').forEach(slide => {
+      const image = slide.querySelector('.carousel-image');
+      const frame = slide.querySelector('.carousel-gold-frame');
+      if (!image || !frame || !image.naturalWidth || !image.naturalHeight) return;
+
+      // Cap very tall / portrait artwork by viewport height, then derive width from its natural ratio.
+      const maxImageHeight = Math.min(
+        window.innerWidth <= 540 ? window.innerHeight * 0.60 :
+        window.innerWidth <= 780 ? window.innerHeight * 0.66 :
+        window.innerHeight * 0.72,
+        760
+      );
+
+      const aspect = image.naturalWidth / image.naturalHeight;
+      const widthFromHeight = maxImageHeight * aspect;
+      const desiredImageWidth = Math.min(
+        image.naturalWidth,
+        widthFromHeight,
+        desktopCap,
+        availableViewport
+      );
+
+      // Keep smaller portrait images usable without forcing a giant black surround.
+      const safeWidth = Math.max(Math.min(desiredImageWidth, availableViewport), Math.min(280, availableViewport));
+      const framePadding = window.innerWidth <= 780 ? 20 : 36;
+      frame.style.setProperty('--art-width', `${Math.min(safeWidth + framePadding, availableViewport)}px`);
+    });
+
+    positionCarouselNavigation();
+    if (window.quranSwiper) window.quranSwiper.updateAutoHeight(300);
+  }
+
+  function positionCarouselNavigation() {
+    const swiperEl = document.querySelector('.mySwiper');
+    const activeSlide = document.querySelector('.mySwiper .swiper-slide-active');
+    const frame = activeSlide?.querySelector('.carousel-gold-frame');
+    const imageWrap = activeSlide?.querySelector('.carousel-frame-inner');
+    if (!swiperEl || !frame || !imageWrap) return;
+
+    const swiperRect = swiperEl.getBoundingClientRect();
+    const frameRect = frame.getBoundingClientRect();
+    const imageRect = imageWrap.getBoundingClientRect();
+
+    const gap = window.innerWidth <= 780 ? 4 : 10;
+    const left = Math.max(2, frameRect.left - swiperRect.left - (window.innerWidth <= 780 ? 38 : 56) - gap);
+    const right = Math.max(2, swiperRect.right - frameRect.right - (window.innerWidth <= 780 ? 38 : 56) - gap);
+    const top = imageRect.top - swiperRect.top + imageRect.height / 2;
+
+    swiperEl.style.setProperty('--nav-left', `${left}px`);
+    swiperEl.style.setProperty('--nav-right', `${right}px`);
+    swiperEl.style.setProperty('--nav-top', `${top}px`);
+  }
+
+  document.querySelectorAll('.carousel-image').forEach(image => {
+    if (image.complete && image.naturalWidth) {
+      // defer until Swiper exists
+      setTimeout(sizeCarouselArtwork, 0);
+    } else {
+      image.addEventListener('load', sizeCarouselArtwork, { once: true });
+    }
+  });
+
+  window.quranSwiper = new Swiper('.mySwiper', {
     loop: true,
     effect: 'slide',
     speed: 800,
-    spaceBetween: 30,
+    spaceBetween: 20,
     centeredSlides: true,
     slidesPerView: 1,
-    breakpoints: {
-      768: {
-        slidesPerView: 1,
-        spaceBetween: 40,
-      },
-      1024: {
-        slidesPerView: 1,
-        spaceBetween: 50,
-      }
-    },
+    autoHeight: true,
+    observer: true,
+    observeParents: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -644,6 +851,26 @@
       enabled: true,
     },
     grabCursor: true,
+    on: {
+      init() {
+        requestAnimationFrame(() => {
+          sizeCarouselArtwork();
+          positionCarouselNavigation();
+        });
+      },
+      slideChangeTransitionEnd() {
+        positionCarouselNavigation();
+      },
+      resize() {
+        sizeCarouselArtwork();
+      }
+    }
+  });
+
+  let carouselResizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(carouselResizeTimer);
+    carouselResizeTimer = setTimeout(sizeCarouselArtwork, 120);
   });
 </script>
 </body>
